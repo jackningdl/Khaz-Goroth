@@ -31,3 +31,9 @@ pip install grip
 grip your_markdown.md
 
 grip your_markdown.md --export your_markdown.html
+
+
+
+
+npm install -g markdown-pdf
+markdown-pdf /path/to/markdown
