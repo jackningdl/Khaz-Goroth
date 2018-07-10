@@ -3,8 +3,7 @@
 ## 准备: 安装MongoDB
 
 ### MongoDB Community Edition手动安装
-Download:	
-https://www.mongodb.org/downloads#production 	
+Download: https://www.mongodb.org/downloads#production 	 	
 Extract(terminal):	
 ```
 tar -zxvf mongodb-osx-ssl-x86_64-4.0.0.tgz
@@ -32,11 +31,11 @@ mkdir db
 2018-07-09T20:48:14.935-0700 I NETWORK  [initandlisten] waiting for connections on port 27017
 ```
 
-- 打开另一个terminal并cd到mongodb-osx-xxxx目录下:
+**打开另一个terminal并cd到mongodb-osx-xxxx目录下:**
 ```
 cd ~/mongodb-osx-xxxx 
 ```
-- 启动一个mongo shell:
+**启动一个mongo shell:**
 ```
 ./bin/mongo
 ```
@@ -79,5 +78,21 @@ db.enableFreeMonitoring()
 
 > 
 ```
+
+**创建一个新的database**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
