@@ -3,7 +3,7 @@
 ## 准备: 安装MongoDB
 
 ### MongoDB Community Edition手动安装
-Download: linkhttps://www.mongodb.org/downloads#production 			
+Download: [link](https://www.mongodb.org/downloads#production)				 			
 Extract(terminal):	
 ```
 tar -zxvf mongodb-osx-ssl-x86_64-4.0.0.tgz
@@ -80,6 +80,87 @@ db.enableFreeMonitoring()
 ```
 
 **创建一个新的database**
+```
+use Testdatabse
+```
+**Try to see if there’s any collection inside.**
+```
+show collections
+```
+这里显示的是数据库中是否存在collections(tables in MySQL)
+刚创建的时候应该什么都不显示:
+```
+> use TestDatabase
+switched to db TestDatabase
+> show collections
+> 
+```
+
+### 用Java运行mongodb的命令
+
+**创建db.mongodb的package以及其中的MongoDBUtil和MongoDBTableCreation两个class**
+
+MongoDBUtil:
+```java
+package db.mongodb;
+
+public class MongoDBUtil {
+	public static final String DB_NAME = "laiproject";
+}
+```
+MongoDBTableCreation:
+```java
+package db.mongodb;
+
+import java.text.ParseException;
+import org.bson.Document;
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.IndexOptions;
+
+public class MongoDBTableCreation {
+  // Run as Java application to create MongoDB collections with index.
+  public static void main(String[] args) throws ParseException {
+
+    // Step 1, connetion to MongoDB
+	MongoClient mongoClient = new MongoClient();
+	MongoDatabase db = mongoClient.getDatabase(MongoDBUtil.DB_NAME);
+
+    // Step 2, remove old collections.
+	db.getCollection("users").drop();
+	db.getCollection("items").drop();
+	
+
+    // Step 3, create new collections/SQL里面是Table
+	IndexOptions options = new IndexOptions().unique(true);
+	db.getCollection("users").createIndex(new Document("user_id", 1), options);
+	db.getCollection("items").createIndex(new Document("user_id", 1), options);
+
+    // Step 4, insert fake user data and create index.
+	db.getCollection("users").insertOne(new Document()
+			.append("user_id", "1111")
+			.append("password", "3229c1097c00d497a0fd282d586be050")
+			.append("first_name", "John")
+			.append("first_name", "Smith"));
+	
+	// Step 5, close.
+	mongoClient.close();
+
+    System.out.println("Import is done successfully.");
+  }
+}
+```
+
+**最后run as java application**
+
+
+
+
+
+
+
+
+
 
 
 
