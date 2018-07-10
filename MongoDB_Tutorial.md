@@ -3,7 +3,7 @@
 ## 准备: 安装MongoDB
 
 ### MongoDB Community Edition手动安装
-Download: https://www.mongodb.org/downloads#production 	 	
+Download: linkhttps://www.mongodb.org/downloads#production 			
 Extract(terminal):	
 ```
 tar -zxvf mongodb-osx-ssl-x86_64-4.0.0.tgz
