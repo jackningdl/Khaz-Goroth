@@ -153,6 +153,15 @@ public class MongoDBTableCreation {
 
 **最后run as java application**
 
+此时数据库中应创建了以上代码中的users collection，查阅通过
+```
+> show collections
+items
+users
+> db.users.find()
+{ "_id" : ObjectId("5b45651987bd6bce3c53658b"), "user_id" : "1111", "password" : "3229c1097c00d497a0fd282d586be050", "first_name" : "Smith" }
+```
+
 
 
 
