@@ -2,40 +2,42 @@
 
 ## 准备: 安装MongoDB
 
-### MongoDB Community Edition手动安装
-Download: [link](https://www.mongodb.org/downloads#production)				 			
+**MongoDB Community Edition手动安装**
+Download: https://www.mongodb.org/downloads#production  
 Extract(terminal):	
 ```
 tar -zxvf mongodb-osx-ssl-x86_64-4.0.0.tgz
 ```
 
-### 或用Homebrew安装
+**或用Homebrew安装**
 ```
 brew update		
 brew install mongodb 
 ```
 
-### 开启MongoDB的后台进程
+
+## 开启MongoDB服务器并创建数据库
+
+### 开启MongoDB的后台进程(Server)
 ```
 cd ~/mongodb-osx-xxxx 	
 mkdir db 	
 ./bin/mongod --dbpath db/
 ```
-之后的数据都会在db文件夹中记录
-
-
-## 创建数据库并写入数据
+之后的数据都会在`db`文件夹中记录
 
 当显示如下时，说明mongodb进程已经启动：
 ```
 2018-07-09T20:48:14.935-0700 I NETWORK  [initandlisten] waiting for connections on port 27017
 ```
 
-**打开另一个terminal并cd到mongodb-osx-xxxx目录下:**
+**打开另一个terminal并cd到`mongodb-osx-xxxx`目录下:**
 ```
 cd ~/mongodb-osx-xxxx 
 ```
-**启动一个mongo shell做Client端**
+### 启动mongo shell做Client端
+
+**terminal中输入**
 ```
 ./bin/mongo
 ```
@@ -79,7 +81,7 @@ db.enableFreeMonitoring()
 > 
 ```
 
-**创建一个新的database**
+**通过shell创建一个新的database**
 ```
 use TestDatabse
 ```
@@ -98,15 +100,16 @@ switched to db TestDatabase
 
 ## 用Java运行mongodb的命令:创建Collections(Tables)
 
-**创建db.mongodb的package以及其中的MongoDBUtil和MongoDBTableCreation两个class**
+**创建db.mongodb的package以及其中的`MongoDBUtil`和`MongoDBTableCreation`两个class**
 
-[MongoDBUtil](MongoDBUtil.java)  
-[MongoDBTableCreation](MongoDBTableCreation.java)
+  [MongoDBUtil](MongoDBUtil.java)  
+  [MongoDBTableCreation](MongoDBTableCreation.java)  
 
 
-**最后run as java application**
 
-此时数据库中应创建了以上代码中的users collection，查阅通过
+**Run as java application**
+
+此时数据库中应创建了以users为命名的collection
 ```
 > show collections
 items
@@ -114,9 +117,26 @@ users
 > db.users.find()
 { "_id" : ObjectId("5b45651987bd6bce3c53658b"), "user_id" : "1111", "password" : "3229c1097c00d497a0fd282d586be050", "first_name" : "Smith" }
 ```
+**若检查当前数据库**
+```
+> db
+TestDatabase
+> 
+```
+**检查所有数据库**
+```
+> show dbs
+admin       0.000GB
+config      0.000GB
+TestDatabse 0.000GB
+local       0.000GB
+> 
+```
 
 
 ## 用Java运行mongodb的命令:增删查改
+
+
 
 
 
