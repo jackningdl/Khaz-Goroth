@@ -81,7 +81,7 @@ db.enableFreeMonitoring()
 
 **创建一个新的database**
 ```
-use Testdatabse
+use TestDatabse
 ```
 **Try to see if there’s any collection inside.**
 ```
@@ -105,7 +105,7 @@ MongoDBUtil:
 package db.mongodb;
 
 public class MongoDBUtil {
-	public static final String DB_NAME = "laiproject";
+	public static final String DB_NAME = "TestDatabase";
 }
 ```
 MongoDBTableCreation:
