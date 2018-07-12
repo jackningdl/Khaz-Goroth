@@ -35,7 +35,7 @@ mkdir db
 ```
 cd ~/mongodb-osx-xxxx 
 ```
-**启动一个mongo shell:**
+**启动一个mongo shell做Client端**
 ```
 ./bin/mongo
 ```
@@ -100,56 +100,9 @@ switched to db TestDatabase
 
 **创建db.mongodb的package以及其中的MongoDBUtil和MongoDBTableCreation两个class**
 
-MongoDBUtil:
-```java
-package db.mongodb;
+[MongoDBUtil](MongoDBUtil.java)
+[MongoDBTableCreation](MongoDBTableCreation.java)
 
-public class MongoDBUtil {
-	public static final String DB_NAME = "TestDatabase";
-}
-```
-MongoDBTableCreation:
-```java
-package db.mongodb;
-
-import java.text.ParseException;
-import org.bson.Document;
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.IndexOptions;
-
-public class MongoDBTableCreation {
-  // Run as Java application to create MongoDB collections with index.
-  public static void main(String[] args) throws ParseException {
-
-    // Step 1, connetion to MongoDB
-	MongoClient mongoClient = new MongoClient();
-	MongoDatabase db = mongoClient.getDatabase(MongoDBUtil.DB_NAME);
-
-    // Step 2, remove old collections.
-	db.getCollection("users").drop();
-	db.getCollection("items").drop();
-	
-
-    // Step 3, create new collections/SQL里面是Table
-	IndexOptions options = new IndexOptions().unique(true);
-	db.getCollection("users").createIndex(new Document("user_id", 1), options);
-	db.getCollection("items").createIndex(new Document("user_id", 1), options);
-
-    // Step 4, insert fake user data and create index.
-	db.getCollection("users").insertOne(new Document()
-			.append("user_id", "1111")
-			.append("password", "3229c1097c00d497a0fd282d586be050")
-			.append("first_name", "John")
-			.append("first_name", "Smith"));
-	
-	// Step 5, close.
-	mongoClient.close();
-
-    System.out.println("Import is done successfully.");
-  }
-}
-```
 
 **最后run as java application**
 
