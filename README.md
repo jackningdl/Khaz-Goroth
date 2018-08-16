@@ -10,6 +10,7 @@
 - [添加sublime Text3自动对齐](sublime_reindent.md)	
 - [ELK Stack (ElasticSearch, Logstash, Kibana)](ELK_Stack.md)
 - [MongoDB的安装和使用](MongoDB)
+- [Eclipse自动补全的设置](eclipse_Auto_Activation.md)
 
 
 

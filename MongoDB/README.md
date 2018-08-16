@@ -2,7 +2,7 @@
 
 ## 准备: 安装MongoDB
 
-**MongoDB Community Edition手动安装**
+**MongoDB Community Edition手动安装**  
 Download: https://www.mongodb.org/downloads#production  
 Extract(terminal):	
 ```
@@ -36,8 +36,6 @@ mkdir db
 cd ~/mongodb-osx-xxxx 
 ```
 ### 启动mongo shell做Client端
-
-**terminal中输入**
 ```
 ./bin/mongo
 ```
