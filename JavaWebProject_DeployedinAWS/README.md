@@ -3,6 +3,8 @@
 ## 创建AWS上EC2的instance
 
 Download the `key pair` and save with a unique name
+<br/>
+<br/>
 
 ## Connect to the instance
 
@@ -56,7 +58,8 @@ scp -i ~/KeyPair.pem  ~/Project.war ubuntu@XX.XXX.XXX.XXX:~
 ```
 接下来就是等上载完成 <br/>
 当然还要安装tomcat和sql
-
+<br/>
+<br/>
 
 ## 启动instance里的war
 
