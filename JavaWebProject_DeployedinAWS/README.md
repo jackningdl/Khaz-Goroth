@@ -1,8 +1,10 @@
 # AWS上部署Java Web Project
+<br/>
+<br/>
 
 ## 创建AWS上EC2的instance
 
-Download the `key pair` and save with a unique name
+Download the `key pair` and save with a unique name<br/>
 <br/>
 <br/>
 
@@ -57,7 +59,7 @@ See "man sudo_root" for details.
 scp -i ~/KeyPair.pem  ~/Project.war ubuntu@XX.XXX.XXX.XXX:~
 ```
 接下来就是等上载完成 <br/>
-当然还要安装tomcat和sql
+当然还要安装tomcat和sql<br/>
 <br/>
 <br/>
 
