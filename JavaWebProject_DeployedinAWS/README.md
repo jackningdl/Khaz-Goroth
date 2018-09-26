@@ -58,16 +58,30 @@ See "man sudo_root" for details.
 <br/>
 <br/>
 
+## 安装Java
+```
+sudo apt-get update
+```
+```
+sudo apt-get install default-jre
+```
+```
+java -version
+```
+
+<br/>
+<br/>
 
 
-## 创建数据库
+
+
+## 安装和创建数据库
 
 通过建立MySQL/MongoDB来建立数据库
 
-[MySQL数据库建立](MySQL数据库建立)
-
-
-
+[MySQL数据库建立](MySQLDB)
+<br/>
+<br/>
 
 
 ## 上传war包到instance
