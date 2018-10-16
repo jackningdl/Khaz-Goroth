@@ -47,3 +47,9 @@ less package.json
 npm install -g create-react-app
 ```
 ### 4. 
+
+
+
+
+
+npm install -S react-google-maps

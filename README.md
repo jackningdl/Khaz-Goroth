@@ -18,6 +18,7 @@
 - [Firebase](Firebase)
 - [Tomcat](Tomcat.md)
 - [React Setup](React.md)
+- [.gitignore语法规范](Instruction_gitignore)
 
 
 
