@@ -1,10 +1,6 @@
 /*
-
- 个人整理
- 帮助刷题
- 欢迎复制
+ 个人整理 帮助刷题 欢迎复制
  如果喜欢请点星star
- 
 */
 
 class TreeNode {
@@ -76,7 +72,7 @@ class Helper {
         return root;
     }
 
-    private TrieNode buildTrie(String[] words) {
+    public TrieNode buildTrie(String[] words) {
         TrieNode root = new TrieNode();
         for (String word : words) {
             TrieNode p = root;
@@ -91,7 +87,7 @@ class Helper {
         return root;
     }
 
-    private ListNode buildListNode(int[] array) {
+    public ListNode buildListNode(int[] array) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy;
         for (int i = 0; i < array.length; i++) {
