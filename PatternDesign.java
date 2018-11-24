@@ -1,5 +1,6 @@
 /**
  * builder pattern
+ * initiate an object in a more convenient, safe and flexible way.
  */
 
 public class User {
@@ -70,8 +71,38 @@ public class User {
 	}
 
 	public static void main(String[] arv) {
-		User user = new User.UserBuilder("John", "Smith").setAge(25).setPhone("6666666666").setAddress("N 1st St").build();
+		User user = new User.UserBuilder("John", "Smith")
+								.setAge(25)
+								.setPhone("6666666666")
+								.setAddress("N 1st St")
+								.build();
 
 	}
 }
+
+/**
+ * singleton pattern
+ * Ensure a class has only one instance, and provide aa global point of access to it.
+ */
+
+public class SingletonExample {
+	private static final SingletonExample Instance = null;
+
+	private SingletonExample() {
+
+	}
+
+	public static SingletonExample getInstance() {
+		if (Instance == null) {
+			Instance = new SingletonExample();
+		}
+		return Instance;
+	}
+}
+
+
+/**
+ * factory pattern
+ * 
+ */
 
