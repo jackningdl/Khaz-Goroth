@@ -53,4 +53,54 @@ exit
 ```
 docker image ls
 ```
+```
+REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
+nginx                   latest              568c4670fa80        7 days ago          109MB
+ubuntu                  16.04               a51debf7e1eb        2 weeks ago         116MB
+x                       latest              20718b514c59        8 months ago        1.31GB
+x                       <none>              dd5ba295b6d3        8 months ago        1.15GB
+```
+
+查看镜像，容器，数据卷所占用空间：
+```
+docker system df
+```
+```
+TYPE                TOTAL               ACTIVE              SIZE                RECLAIMABLE
+Images              4                   2                   2.031GB             884.5MB (43%)
+Containers          15                  0                   263.4MB             263.4MB (100%)
+Local Volumes       0                   0                   0B                  0B
+Build Cache         0                   0                   0B                  0B
+```
+
+
+查看虚悬镜像(dangling image):
+```
+docker image ls -f dangling=true
+```
+
+### 删除镜像：
+```
+docker image rm [choice] <image1> [<image2>...]
+```
+用 ID which is a short ID删除:
+```
+docker image rm dd5b
+```
+
+用Repository name删除:
+```
+docker image rm x
+```
+用镜像摘要：
+```
+docker image ls --digests
+```
+```
+docker image rm node@sha256:7b498e582c3e004e46b7d
+```
+```
+
+
+
 
