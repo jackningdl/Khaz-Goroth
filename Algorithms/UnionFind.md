@@ -3,11 +3,13 @@
 - To access the group of any elememt in O(1) amortized time
 - The size of data range should be given to avoid OutOfBoundary error
 
+
 ```Java
 /**
 如果要 union 2 elements
 我们首先确定这两个elements是否已经union在一个group了
 如果有，就不需要union --> 或者可以说是多余的union
+
 */
 
 class UnionFindSet {
