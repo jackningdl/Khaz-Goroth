@@ -99,7 +99,17 @@ docker image ls --digests
 ```
 docker image rm node@sha256:7b498e582c3e004e46b7d
 ```
-```
+
+
+## 创建Docker的过程
+
+1. 用Dockerfile创造初始文件 (base, install, start)
+2. 给Docker Image上标签
+
+
+
+
+
 
 
 
