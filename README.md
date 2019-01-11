@@ -29,5 +29,7 @@
 - [Leetcode Exercise Helper](Algorithms/lceHelper.java)
 - [Morris Traversal](Algorithms/MorrisTraversal.md)
 - [Union Find](Algorithms/UnionFind.md)
+- [Knuth-Morris-Pratt]()
+- [Design Pattern](PatternDesgin.java)
 
 

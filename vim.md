@@ -21,7 +21,7 @@
 
 ## 命令设置
 
-`set ruler`: 显示状态栏标尺
+`set ruler`: 显示状态栏标尺	
 `set number`: 显示行号
 `set spell`: 
 `set cursorline`: 高亮当前杭
