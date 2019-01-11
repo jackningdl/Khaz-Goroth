@@ -106,3 +106,60 @@ public class SingletonExample {
  * 
  */
 
+
+
+
+/**
+ * Candy crush initiation
+ * 
+ */
+
+public class CandyCrushInitiation {
+    public int[][][] generate(int r, int c, int N) {
+        int[][][] res = new int[2][r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                fill(res, i, j, N);
+            }
+        }
+        return res;
+    }
+    private void fill(int[][][] array, int i, int j, int N) {
+        boolean randomGenerate = true;
+        while (randomGenerate) {
+            int fill = (int)(Math.random() * N);
+            randomGenerate = false;
+            boolean checkUp = (i - 1 >= 0 && j >= 0 && fill == array[0][i - 1][j]);
+            boolean checkLeft = (i >= 0 && j - 1 >= 0 && fill == array[0][i][j - 1]);
+            if (checkUp && checkLeft) {
+                int countMax = Math.max(array[1][i - 1][j], array[1][i][j - 1]);
+                if (countMax < 2) {
+                    array[1][i][j] = countMax + 1;
+                    array[0][i][j] = fill;
+                } else {
+                    randomGenerate = true;
+                    continue;
+                }
+            } else if (checkUp) {
+                if (array[1][i - 1][j] < 2) {
+                    array[1][i][j] = array[1][i - 1][j] + 1;
+                    array[0][i][j] = fill;
+                } else {
+                    randomGenerate = true;
+                    continue;
+                }
+            } else if (checkLeft) {
+                if (array[1][i][j - 1] < 2) {
+                    array[1][i][j] = array[1][i][j - 1] + 1;
+                    array[0][i][j] = fill;
+                } else {
+                    randomGenerate = true;
+                    continue;
+                }
+            } else {
+                array[1][i][j] ++;
+                array[0][i][j] = fill;
+            }
+        }
+    }
+}
