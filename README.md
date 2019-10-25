@@ -22,6 +22,10 @@
 - [Docker](docker.md)
 - [Vim Configuration](vim.md)
 
+### 开发
+
+- [Flutter安装和环境设定](flutter.md)
+- [React Setup](React.md)
 
 
 ### 算法
@@ -31,5 +35,9 @@
 - [Union Find](Algorithms/UnionFind.md)
 - [Knuth-Morris-Pratt]()
 - [Design Pattern](PatternDesgin.java)
+- [Segment Tree](Algorithms/SegmentTree.md)
+
+
+
 
 
