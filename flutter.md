@@ -61,7 +61,7 @@ $ sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 调出License并agree:
 
 ```
-sudo xcodebuild -license
+$ sudo xcodebuild -license
 ```
 
 ### 6. 启动IOS的Simulator
@@ -79,4 +79,12 @@ $ flutter create my_app
 
 ```
 $ flutter run
+```
+
+### 9. VSCode开发环境
+
+Extension
+```
+Dart
+Material Icon Theme
 ```
