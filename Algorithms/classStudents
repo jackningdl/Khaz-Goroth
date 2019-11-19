@@ -1,0 +1,54 @@
+class Students{
+	String name;
+	String id;
+	Integer age;
+	String courseid;
+	String numofcourses
+}
+
+class Course {
+	String name;
+	String Courseid;
+	String studentid;
+}
+
+class relationship{
+	String studentid;
+	String courseid;
+}
+
+public List<Students> main{
+	List<Students> students = 
+	List<Courses> courses = 
+	List<relationship> r = 
+
+	//calculate and populate the numofcourses of students. 
+
+	Map<String, List<String>> map = new HashMap<>();
+	for (int i = 0; i < r.size(); i++) {
+	  if (!map.containsKey(r.get(i).studentid)) {
+	    map.put(r.get(i).studentid), Arrays.asList(r.get(i).couseid));
+	  } else {
+	  List<String> cur = map.get(r.get(i).studentid);
+	  map.put(r.get(i).studentid, cur.add(r.get(i).coueseid));
+	  }
+	}
+
+	for (relationship each: r) {
+		String studentid = each.studentid;
+		String courseid = each.courseid;
+		if (map.containsKey(studentid)) {
+			map.get(studentid).add(courseid);
+		} else {
+			List<String> list = new ArrayList<>();
+			list.add(courseid);
+			map.put(studentid, list);
+		}
+	}
+
+	for (Students each: students) {
+		String name = each.name;
+		each.numofcourses = map.get(name).size();
+	}
+	return students;
+}
