@@ -1,0 +1,1 @@
+Three JSON files used in a .vscode folder in a new workspace
