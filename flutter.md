@@ -88,3 +88,8 @@ Extension
 Dart
 Material Icon Theme
 ```
+
+### 10. Move project to another folder
+```
+flutter packages get
+```
