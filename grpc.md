@@ -19,3 +19,8 @@ protoc xx/xx/aaa.proto --go_out=plugins=grpc:.
 ```
 
 
+### VSCode Setup
+
+- VSCode extensions: ```vscode-proto3```  & ```Clang-Format```  
+
+- Clang-Format: MacOSX: ```brew install clang-format``` 
